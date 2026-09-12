@@ -1,80 +1,566 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>InterMASH: A Unified Geometric Representation for Grasp Synthesis</title>
-  <meta
-    name="description"
-    content="Project page for InterMASH: A Unified Geometric Representation for Grasp Synthesis."
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="page-bg" aria-hidden="true"></div>
-
-  <header class="hero">
-    <div class="hero-inner">
-      <p class="venue">Project Homepage</p>
-      <h1>InterMASH: A Unified Geometric Representation for Grasp Synthesis</h1>
-      <p class="subtitle">A clean project-page template inspired by academic paper websites.</p>
-
-      <div class="meta-row">
-        <span>Author List (TBD)</span>
-        <span>Affiliations (TBD)</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8fbff" />
+    <title>
+      InterMASH · A Unified Geometric Representation for Grasp Synthesis
+    </title>
+    <meta
+      name="description"
+      content="InterMASH unifies human and robotic hands in an anchor-indexed geometric representation for physically plausible, cross-embodiment grasp synthesis. SIGGRAPH Asia 2026."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="InterMASH: A Unified Geometric Representation for Grasp Synthesis"
+    />
+    <meta
+      property="og:description"
+      content="Different hands. A shared geometric language for grasping. SIGGRAPH Asia 2026 Conference Papers."
+    />
+    <meta property="og:url" content="https://inter-mash.github.io/" />
+    <meta
+      property="og:image"
+      content="https://inter-mash.github.io/assets/images/teaser.webp"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="citation_title"
+      content="InterMASH: A Unified Geometric Representation for Grasp Synthesis"
+    />
+    <meta name="citation_author" content="Xuanze Yang" />
+    <meta name="citation_author" content="Yumeng Liu" />
+    <meta name="citation_author" content="Haiyang Xin" />
+    <meta name="citation_author" content="Changhao Li" />
+    <meta name="citation_author" content="Haowei Shen" />
+    <meta name="citation_author" content="Kai Xu" />
+    <meta name="citation_author" content="Ligang Liu" />
+    <meta name="citation_author" content="Ruizhen Hu" />
+    <meta name="citation_publication_date" content="2026" />
+    <meta
+      name="citation_conference_title"
+      content="SIGGRAPH Asia 2026 Conference Papers"
+    />
+    <meta name="citation_doi" content="10.1145/3829340.3842336" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="hero" id="top">
+      <div class="hero-inner">
+        <p class="venue">SIGGRAPH Asia 2026 · Conference Papers</p>
+        <h1>
+          InterMASH: A Unified Geometric Representation for Grasp Synthesis
+        </h1>
+        <p class="subtitle">
+          A unified geometric representation for physically plausible grasp
+          synthesis across human and robotic hands.
+        </p>
+        <div class="meta-row authors" aria-label="Authors">
+          <span>Xuanze Yang<sup>1</sup></span
+          ><span>Yumeng Liu<sup>1,*</sup></span
+          ><span>Haiyang Xin<sup>1</sup></span
+          ><span>Changhao Li<sup>1</sup></span
+          ><span>Haowei Shen<sup>1</sup></span
+          ><span>Kai Xu<sup>2</sup></span
+          ><span>Ligang Liu<sup>1</sup></span
+          ><span>Ruizhen Hu<sup>3</sup></span>
+        </div>
+        <div class="affiliations">
+          <p><sup>1</sup> University of Science and Technology of China</p>
+          <p>
+            <sup>2</sup> Jiangsu Key Laboratory of AI for Industries and
+            Institute of AI for Industries,<br class="desktop-break" />
+            Chinese Academy of Sciences
+          </p>
+          <p><sup>3</sup> Shenzhen University</p>
+        </div>
+        <p class="corresponding">* Corresponding author</p>
+        <nav class="quick-links" aria-label="Project links">
+          <button disabled>Paper</button><!-- Add resource URLs when available; disabled items intentionally have no links. --><button
+            disabled
+          >
+            arXiv</button
+          ><button disabled>Code</button><button disabled>Dataset</button>
+        </nav>
       </div>
+    </header>
+    <main id="main">
+      <section class="section" id="teaser">
+        <h2>Teaser</h2>
+        <figure class="paper-figure">
+          <a
+            class="figure-link"
+            href="assets/images/teaser.webp"
+            data-lightbox
+            aria-label="Enlarge InterMASH overview"
+            ><img
+              src="assets/images/teaser.webp"
+              width="1530"
+              height="600"
+              alt="ShadowHand, MANO, Barrett, and Allegro share anchor-indexed object, hand, and contact tokens, enabling grasp synthesis across embodiments."
+              fetchpriority="high"
+            /><span class="enlarge-hint" aria-hidden="true">↗ Enlarge</span></a
+          >
+          <figcaption>
+            <strong>One representation, multiple embodiments.</strong> InterMASH
+            encodes local object geometry, hand geometry, and contact in a
+            shared token space, connecting human and robotic grasp synthesis.
+          </figcaption>
+        </figure>
+        <h3>Abstract</h3>
+        <div class="abstract-copy">
+          <p>
+            Grasp synthesis aims to generate stable and physically plausible
+            hand–object interactions. Yet a unified representation across human
+            and robotic hands remains challenging because of differences in hand
+            morphology and surface modeling. Contact maps alone leave hand
+            geometry implicit, while dense interaction descriptors can be
+            computationally expensive and redundant.
+          </p>
+          <p>
+            We introduce <strong>InterMASH</strong>, a unified geometric
+            representation that establishes cross-embodiment correspondence
+            using sphere-fixed anchors. At each anchor, low-degree spherical
+            harmonics compactly encode local hand geometry, object geometry, and
+            contact, forming an explicit and interpretable token sequence.
+          </p>
+          <p>
+            Building on this structure, a
+            <strong>conditional Diffusion Transformer</strong> jointly generates
+            hand geometry and contact. Physics-guided training and sampling
+            improve physical plausibility, while patch-wise inverse kinematics
+            recovers the final articulated hand pose. Experiments demonstrate
+            strong physical feasibility on DexGraspNet, support for mixed-hand
+            training, and improved robotic grasp success and diversity when
+            fine-tuning with human grasp data.
+          </p>
+        </div>
+      </section>
+      <section class="section" id="method">
+        <h2>Method</h2>
+        <figure class="paper-figure">
+          <a
+            class="figure-link"
+            href="assets/images/method.webp"
+            data-lightbox
+            aria-label="Enlarge the method overview"
+            ><img
+              src="assets/images/method.webp"
+              width="1530"
+              height="648"
+              loading="lazy"
+              alt="InterMASH framework: anchor-based hand and object representation, a conditional Diffusion Transformer with neighborhood-enhanced attention, and inverse kinematics for the final pose."
+            /><span class="enlarge-hint" aria-hidden="true">↗ Enlarge</span></a
+          >
+          <figcaption>
+            The InterMASH pipeline. Object geometry and a hand template
+            condition the joint generation of grasp-specific hand geometry and
+            contact. Neighborhood-enhanced attention incorporates local patch
+            adjacency.
+          </figcaption>
+        </figure>
+        <h3>Align &amp; encode</h3>
+        <p>
+          Align robotic-hand patches to a MANO reference ordering using
+          keypoint-distance signatures. Shared sphere-fixed anchors encode local
+          surface patches with spherical harmonics; coarse-to-fine fitting
+          stabilizes reconstruction.
+        </p>
+        <h3>Jointly denoise</h3>
+        <p>
+          Generate hand geometry and contact tokens conditioned on the object
+          and hand template. Neighborhood-enhanced attention uses patch
+          adjacency, while physical guidance encourages stable contact and
+          reduces penetration.
+        </p>
+        <h3>Recover the pose</h3>
+        <p>
+          Reconstruct patch-wise point sets, initialize global hand alignment,
+          and solve inverse kinematics under the shared patch correspondence to
+          recover the final articulated grasp.
+        </p>
+        <figure class="paper-figure">
+          <a
+            class="figure-link"
+            href="assets/images/representation.webp"
+            data-lightbox
+            aria-label="Enlarge hand representation comparison"
+            ><img
+              src="assets/images/representation.webp"
+              width="735"
+              height="405"
+              loading="lazy"
+              alt="Original meshes above their colored InterMASH patch reconstructions for Barrett, Allegro, ShadowHand, and MANO."
+          /></a>
+          <figcaption>
+            Original meshes (top) and InterMASH reconstructions (bottom), across
+            four hand embodiments.
+          </figcaption>
+        </figure>
+        <p>
+          Each anchor stores a compact description of its local interaction. The
+          continuous patch representation supports surface sampling beyond a
+          fixed point-cloud resolution, while a consistent semantic ordering
+          connects corresponding regions across hands.
+        </p>
+      </section>
+      <section class="section" id="results">
+        <h2>Results</h2>
+        <div class="results-grid">
+          <figure class="result-figure">
+            <a
+              class="figure-link"
+              href="assets/images/grasps.webp"
+              data-lightbox
+              aria-label="Enlarge generated grasps"
+              ><img
+                src="assets/images/grasps.webp"
+                width="1530"
+                height="663"
+                loading="lazy"
+                alt="Twenty-one ShadowHand grasps generated by InterMASH on differently shaped objects from DexGraspNet."
+              /><span class="enlarge-hint" aria-hidden="true"
+                >↗ Enlarge</span
+              ></a
+            >
+            <figcaption>
+              Generated grasps on DexGraspNet across varied object geometries
+              (paper Figure 8).
+            </figcaption>
+          </figure>
+          <figure class="result-figure">
+            <a
+              class="figure-link"
+              href="assets/images/cross-hand.webp"
+              data-lightbox
+              aria-label="Enlarge cross-hand grasp results"
+              ><img
+                src="assets/images/cross-hand.webp"
+                width="1530"
+                height="852"
+                loading="lazy"
+                alt="Barrett and ShadowHand grasp comparisons, with D(R, O) above InterMASH for each hand type."
+              /><span class="enlarge-hint" aria-hidden="true"
+                >↗ Enlarge</span
+              ></a
+            >
+            <figcaption>
+              Cross-hand comparisons on the filtered CMapDataset: D(R, O) in
+              yellow and InterMASH in blue. Barrett results occupy the top two
+              rows; ShadowHand results the bottom two (paper Figure 9).
+            </figcaption>
+          </figure>
+          <figure class="result-figure">
+            <a
+              class="figure-link"
+              href="assets/images/comparison.webp"
+              data-lightbox
+              aria-label="Enlarge baseline comparisons"
+              ><img
+                src="assets/images/comparison.webp"
+                width="1530"
+                height="1734"
+                loading="lazy"
+                alt="Three groups of grasp comparisons: DexGrasp Anything in green, D(R, O) in orange, and InterMASH in blue."
+            /></a>
+            <figcaption>
+              DexGrasp Anything (green), D(R, O) (orange), and InterMASH (blue).
+              Each group of three rows compares the same objects (paper Figure
+              7).
+            </figcaption>
+          </figure>
+        </div>
+        <p>
+          InterMASH supports single-hand generation, cross-embodiment robotic
+          grasp synthesis, and human-to-robot prior transfer. The following
+          results are reported in the paper, with each benchmark retaining its
+          own evaluation protocol.
+        </p>
+        <div class="result-block">
+          <h3>Single-hand grasp generation</h3>
+          <p class="table-note">DexGraspNet · ShadowHand · Paper Table 1</p>
+          <div
+            class="table-scroll"
+            role="region"
+            aria-label="DexGraspNet results, scroll horizontally on small screens"
+            tabindex="0"
+          >
+            <table>
+              <caption class="sr-only">
+                Comparison on DexGraspNet. Higher is better for success and
+                diversity; lower is better for penetration.
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Method</th>
+                  <th scope="col">Suc.6 (%) ↑</th>
+                  <th scope="col">Suc.1 (%) ↑</th>
+                  <th scope="col">Pen. (mm) ↓</th>
+                  <th scope="col">Div. ↑</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">UniDexGrasp <span>(2023)</span></th>
+                  <td>33.9</td>
+                  <td>70.1</td>
+                  <td>31.9</td>
+                  <td>0.14</td>
+                </tr>
+                <tr>
+                  <th scope="row">GraspTTA <span>(2021)</span></th>
+                  <td>18.6</td>
+                  <td>67.8</td>
+                  <td>24.5</td>
+                  <td>0.13</td>
+                </tr>
+                <tr>
+                  <th scope="row">SceneDiffuser <span>(2023)</span></th>
+                  <td>26.6</td>
+                  <td>66.9</td>
+                  <td>31.0</td>
+                  <td>0.15</td>
+                </tr>
+                <tr>
+                  <th scope="row">UGG <span>(2024)</span></th>
+                  <td>46.9</td>
+                  <td>79.0</td>
+                  <td>25.2</td>
+                  <td>0.14</td>
+                </tr>
+                <tr>
+                  <th scope="row">DexGrasp Anything <span>(2025)</span></th>
+                  <td><strong>53.6</strong></td>
+                  <td>90.4</td>
+                  <td>21.5</td>
+                  <td><strong>0.22</strong></td>
+                </tr>
+                <tr>
+                  <th scope="row">D(R, O) <span>(2024)</span></th>
+                  <td>46.9</td>
+                  <td>89.7</td>
+                  <td>17.5</td>
+                  <td>0.20</td>
+                </tr>
+                <tr class="ours">
+                  <th scope="row">InterMASH <span>Ours</span></th>
+                  <td>53.5</td>
+                  <td><strong>91.9</strong></td>
+                  <td><strong>16.2</strong></td>
+                  <td>0.14</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">
+            <strong>Suc.6 / Suc.1:</strong> success under all six / at least one
+            disturbance direction. <strong>Pen.:</strong> maximum penetration
+            depth. <strong>Div.:</strong> mean standard deviation of local pose
+            parameters. Bold marks the best value in each column.
+          </p>
+          <p class="result-insight">
+            InterMASH achieves the best Suc.1 and lowest penetration among the
+            compared methods. Its stricter six-direction success and diversity
+            remain below the strongest baseline, reflecting a quality–diversity
+            trade-off.
+          </p>
+        </div>
 
-      <nav class="quick-links" aria-label="Project links">
-        <a href="#" aria-disabled="true">Paper</a>
-        <a href="#" aria-disabled="true">arXiv</a>
-        <a href="#" aria-disabled="true">Code</a>
-        <a href="#" aria-disabled="true">Dataset</a>
-      </nav>
-    </div>
-  </header>
+        <div class="result-block">
+          <h3>Cross-embodiment robotic grasp synthesis</h3>
+          <p class="table-note">
+            Filtered CMapDataset · Barrett &amp; ShadowHand · Paper Table 2
+          </p>
+          <div
+            class="table-scroll"
+            role="region"
+            aria-label="Cross-embodiment results, scroll horizontally on small screens"
+            tabindex="0"
+          >
+            <table>
+              <caption class="sr-only">
+                Cross-embodiment success rate and diversity on the filtered
+                CMapDataset.
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col" rowspan="2">Method</th>
+                  <th scope="colgroup" colspan="2">Success rate (%) ↑</th>
+                  <th scope="colgroup" colspan="2">Diversity ↑</th>
+                </tr>
+                <tr>
+                  <th scope="col">Barrett</th>
+                  <th scope="col">ShadowHand</th>
+                  <th scope="col">Barrett</th>
+                  <th scope="col">ShadowHand</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">DFC</th>
+                  <td>86.30</td>
+                  <td>58.80</td>
+                  <td><strong>0.532</strong></td>
+                  <td>0.435</td>
+                </tr>
+                <tr>
+                  <th scope="row">GenDexGrasp</th>
+                  <td>67.00</td>
+                  <td>54.20</td>
+                  <td>0.488</td>
+                  <td>0.318</td>
+                </tr>
+                <tr>
+                  <th scope="row">D(R, O)</th>
+                  <td>87.30</td>
+                  <td><strong>83.00</strong></td>
+                  <td>0.513</td>
+                  <td><strong>0.441</strong></td>
+                </tr>
+                <tr>
+                  <th scope="row">InterMASH <span>Shadow only</span></th>
+                  <td>—</td>
+                  <td>57.62</td>
+                  <td>—</td>
+                  <td>0.416</td>
+                </tr>
+                <tr class="ours">
+                  <th scope="row">InterMASH <span>Shadow + Barrett</span></th>
+                  <td><strong>90.30</strong></td>
+                  <td>64.15</td>
+                  <td>0.480</td>
+                  <td>0.396</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">
+            Evaluated in Isaac Gym under the D(R, O) protocol. Diversity is the
+            standard deviation of joint values among successful grasps. These
+            success rates use a different protocol from the DexGraspNet table
+            above.
+          </p>
+          <p class="result-insight">
+            Mixed-hand training improves ShadowHand success from
+            <strong>57.62% to 64.15%</strong> and yields the highest Barrett
+            success among these methods. D(R, O) remains stronger on ShadowHand
+            in this smaller mixed-hand dataset.
+          </p>
+        </div>
 
-  <main>
-    <section class="section" id="teaser">
-      <h2>Teaser</h2>
-      <div class="placeholder placeholder-image">Image / Video Placeholder</div>
-      <p class="empty-copy">Brief one-paragraph summary goes here.</p>
-    </section>
-
-    <section class="section" id="method">
-      <h2>Method</h2>
-      <div class="placeholder placeholder-image">Method Figure Placeholder</div>
-      <p class="empty-copy">Core method description goes here.</p>
-    </section>
-
-    <section class="section" id="results">
-      <h2>Results</h2>
-      <div class="results-grid">
-        <div class="placeholder">Result A</div>
-        <div class="placeholder">Result B</div>
-        <div class="placeholder">Result C</div>
-      </div>
-      <p class="empty-copy">Quantitative and qualitative results summary goes here.</p>
-    </section>
-
-    <section class="section" id="bibtex">
-      <h2>BibTeX</h2>
-      <pre><code>@article{intermash2026,
-  title   = {InterMASH: A Unified Geometric Representation for Grasp Synthesis},
-  author  = {TBD},
-  journal = {TBD},
-  year    = {2026}
+        <div class="result-block">
+          <h3>Human grasp priors benefit robotic hands</h3>
+          <p class="table-note">
+            DexGRAB evaluation · Human-to-robot transfer · Paper Table 3
+          </p>
+          <p>
+            Starting from a model trained on ShadowHand DexGRAB samples, we
+            fine-tune on a 1:1 mixture of DexGRAB and MANO-based human GRAB
+            samples. Both settings are evaluated on the same DexGRAB test split.
+          </p>
+          <div
+            class="table-scroll"
+            role="region"
+            aria-label="Human prior transfer results, scroll horizontally on small screens"
+            tabindex="0"
+          >
+            <table>
+              <caption class="sr-only">
+                Effect of adding human GRAB data to robotic DexGRAB training.
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Training setting</th>
+                  <th scope="col">Suc.6 (%) ↑</th>
+                  <th scope="col">Suc.1 (%) ↑</th>
+                  <th scope="col">Pen. (mm) ↓</th>
+                  <th scope="col">Div. ↑</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">DexGRAB only</th>
+                  <td>25.8</td>
+                  <td>64.2</td>
+                  <td><strong>14.9</strong></td>
+                  <td>0.450</td>
+                </tr>
+                <tr class="ours">
+                  <th scope="row">DexGRAB + GRAB fine-tuning</th>
+                  <td><strong>29.0</strong></td>
+                  <td><strong>65.9</strong></td>
+                  <td>18.6</td>
+                  <td><strong>0.500</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="result-insight">
+            Human data improves success and diversity, while penetration
+            increases from 14.9 to 18.6 mm. The paper links this trade-off to
+            higher average penetration in the human source data.
+          </p>
+        </div>
+        <aside class="limitations">
+          <h3>Limitations &amp; future directions</h3>
+          <p>
+            InterMASH has fewer hand-specific inductive biases, which can reduce
+            data efficiency for high-DoF hands in smaller datasets. Future
+            directions include stronger data-efficient priors, pretraining
+            objectives, and hand-aware conditioning. Mixed left- and
+            right-handed training also introduces a handedness ambiguity
+            discussed in the supplementary material.
+          </p>
+        </aside>
+      </section>
+      <section class="section" id="bibtex">
+        <h2>BibTeX</h2>
+        <pre
+          tabindex="0"
+          aria-label="BibTeX citation"
+        ><code id="bibtex-code">@inproceedings{yang2026intermash,
+  title     = {{InterMASH}: A Unified Geometric Representation for Grasp Synthesis},
+  author    = {Yang, Xuanze and Liu, Yumeng and Xin, Haiyang and Li, Changhao
+               and Shen, Haowei and Xu, Kai and Liu, Ligang and Hu, Ruizhen},
+  booktitle = {SIGGRAPH Asia 2026 Conference Papers},
+  series    = {SA Conference Papers '26},
+  year      = {2026},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  location  = {Kuala Lumpur, Malaysia},
+  numpages  = {11},
+  doi       = {10.1145/3829340.3842336}
 }</code></pre>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© 2026 InterMASH Project. All rights reserved.</p>
-  </footer>
-</body>
+        <button id="copy-bibtex" class="copy-button" hidden="hidden">
+          Copy BibTeX
+        </button>
+        <p
+          id="copy-status"
+          class="copy-status"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>© 2026 InterMASH Project. All rights reserved.</p>
+    </footer>
+    <dialog id="figure-dialog" aria-label="Enlarged paper figure">
+      <button class="dialog-close" aria-label="Close enlarged figure">
+        Close <span aria-hidden="true">×</span></button
+      ><img id="dialog-image" alt="" />
+      <p id="dialog-caption"></p>
+    </dialog>
+  </body>
 </html>
