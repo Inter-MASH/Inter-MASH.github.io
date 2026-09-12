@@ -32,3 +32,15 @@ Publication metadata appears in the hero, HTML metadata, BibTeX, and footer. Upd
 ## GitHub Pages
 
 Serve the repository root through GitHub Pages. Figure assets use relative paths. The original Google Fonts stylesheet supplies Space Grotesk and Source Serif 4, with local fallback fonts when unavailable. The paper PDF is not included in the website while its public link is pending.
+
+## Browser compatibility and cached assets
+
+The HTML includes a small image-size fallback so that figures remain within their containers while the external stylesheet is loading or if an older stylesheet is returned. The full stylesheet still controls the original colors, card layout, and result-thumbnail sizing.
+
+CSS and JavaScript URLs use content-based version query parameters. After modifying either asset, run this before committing:
+
+```sh
+python3 tools/update_asset_versions.py
+```
+
+This makes the updated HTML request the corresponding asset version instead of reusing a cached older file. GitHub Pages and browsers can also briefly cache the HTML itself; a hard refresh retrieves the latest page after deployment.

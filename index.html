@@ -44,8 +44,24 @@
       content="SIGGRAPH Asia 2026 Conference Papers"
     />
     <meta name="citation_doi" content="10.1145/3829340.3842336" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <!-- Keep paper figures within their containers even while external CSS is unavailable or stale. -->
+    <style>
+      .paper-figure,
+      .result-figure {
+        min-width: 0;
+      }
+      .figure-link {
+        display: block;
+        max-width: 100%;
+      }
+      .figure-link img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css?v=de67671c9130" />
+    <script src="script.js?v=aad6799bc0aa" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
