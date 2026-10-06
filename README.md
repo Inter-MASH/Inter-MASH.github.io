@@ -23,15 +23,15 @@ Open http://localhost:8000. The page can also be opened directly as `index.html`
 
 The conference information, DOI, authors, and values in Tables 1–3 follow the supplied PDF. The overview and method text are summaries. Images correspond to paper Figures 1 (teaser), 2 (method), 3 (representation), 7 (comparison), 8 (grasps), and 9 (cross-hand). Figure links open an enlarged view and remain usable without JavaScript.
 
-## Add missing resources
+## Project resources
 
-The paper, arXiv, code, and dataset resources are disabled buttons in `.quick-links`. When a URL is available, replace its button with an anchor containing the resource name and URL. Author names are plain text until homepage URLs are available. No placeholder `href="#"` links are used.
+The `.quick-links` navigation links to the [paper PDF](https://arxiv.org/pdf/2609.18504), [arXiv abstract](https://arxiv.org/abs/2609.18504), and [code repository](https://github.com/TheVaticanCameos/InterMASH). The Dataset button has been removed. Author names are plain text until homepage URLs are available. No placeholder `href="#"` links are used.
 
-Publication metadata appears in the hero, HTML metadata, BibTeX, and footer. Update these together if the final publication details change. When the paper becomes publicly available, add its URL to the Paper resource and the `citation_pdf_url` metadata.
+Conference information appears in the hero and HTML metadata. The BibTeX block currently cites the arXiv preprint (2609.18504), pending formal conference publication. Review the publication details when the proceedings become available. The `citation_pdf_url` metadata points to the public arXiv PDF.
 
 ## GitHub Pages
 
-Serve the repository root through GitHub Pages. Figure assets use relative paths. The original Google Fonts stylesheet supplies Space Grotesk and Source Serif 4, with local fallback fonts when unavailable. The paper PDF is not included in the website while its public link is pending.
+Serve the repository root through GitHub Pages. Figure assets use relative paths. The original Google Fonts stylesheet supplies Space Grotesk and Source Serif 4, with local fallback fonts when unavailable. The paper PDF is hosted on arXiv and linked from the website.
 
 ## Browser compatibility and cached assets
 
