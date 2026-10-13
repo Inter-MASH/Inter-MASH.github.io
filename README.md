@@ -27,7 +27,7 @@ The conference information, DOI, authors, and values in Tables 1–3 follow the 
 
 The `.quick-links` navigation links to the [paper PDF](https://arxiv.org/pdf/2609.18504), [arXiv abstract](https://arxiv.org/abs/2609.18504), and [code repository](https://github.com/TheVaticanCameos/InterMASH). The Dataset button has been removed. Author names are plain text until homepage URLs are available. No placeholder `href="#"` links are used.
 
-Conference information appears in the hero and HTML metadata. The BibTeX block currently cites the arXiv preprint (2609.18504), pending formal conference publication. Review the publication details when the proceedings become available. The `citation_pdf_url` metadata points to the public arXiv PDF.
+Conference information appears in the hero and HTML metadata. The BibTeX block cites SIGGRAPH Asia 2026 Conference Papers using an `@inproceedings` entry, with publication details and DOI taken from the paper's ACM Reference Format and copyright notice. The `citation_pdf_url` metadata points to the public arXiv PDF.
 
 ## GitHub Pages
 
